@@ -1,0 +1,28 @@
+<p>multiplicacion works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h1>Multiplicar</h1>
+    <form [formGroup]="formulario">
+      <div class="mb-3">
+        <label for="num1" class="form-label">numero 1</label>
+        <input type="number" id="num1" class="form-control" formControlName="num1">
+      </div>
+       <div class="mb-3">
+        <label for="num2" class="form-label">numero 2</label>
+        <input type="number" id="num2" class="form-control" formControlName="num2">
+      </div>
+       <div class="mb-3">
+       <button class="btn btn-primary" (click)="multiplicacion()">Multiplicar</button>
+      </div>
+      <h1>{{resultado}}</h1>
+    </form>
+  </div>
+</body>
+</html>

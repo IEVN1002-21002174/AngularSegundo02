@@ -1,0 +1,36 @@
+<p>distancia works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h1>Multiplicar</h1>
+    <form [formGroup]="formulario">
+      <div class="mb-3">
+        <label for="x1" class="form-label">X1</label>
+        <input type="number" id="x1" class="form-control" formControlName="x1">
+      </div>
+       <div class="mb-3">
+        <label for="y1" class="form-label">Y1</label>
+        <input type="number" id="y1" class="form-control" formControlName="y1">
+      </div>
+      <div class="mb-3">
+        <label for="x2" class="form-label">X2</label>
+        <input type="number" id="x2" class="form-control" formControlName="x2">
+      </div>
+       <div class="mb-3">
+        <label for="y2" class="form-label">Y2</label>
+        <input type="number" id="y2" class="form-control" formControlName="y2">
+      </div>
+       <div class="mb-3">
+       <button class="btn btn-primary" (click)="cDistancia()">Calcular Distancia</button>
+      </div>
+      <h1>{{resultado}}</h1>
+    </form>
+  </div>
+</body>
+</html>
