@@ -3,10 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { DistanciaComponent } from "./formularios/distancia/distancia.component";
 import { MultiplicacionComponent } from "./formularios/multiplicacion/multiplicacion.component";
 import { distancia } from './formularios/distancia/distancia';
+import { ZodiacoComponent } from "./formularios/zodiaco/zodiaco.component";
+import { initFlowbite } from "flowbite";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DistanciaComponent, MultiplicacionComponent],
+  imports: [RouterOutlet, /* DistanciaComponent, MultiplicacionComponent,ZodiacoComponent,*/  NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
