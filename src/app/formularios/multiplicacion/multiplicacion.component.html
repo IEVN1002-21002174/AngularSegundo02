@@ -1,28 +1,68 @@
 <p>multiplicacion works!</p>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div>
-    <h1>Multiplicar</h1>
-    <form [formGroup]="formulario">
-      <div class="mb-3">
-        <label for="num1" class="form-label">numero 1</label>
-        <input type="number" id="num1" class="form-control" formControlName="num1">
-      </div>
-       <div class="mb-3">
-        <label for="num2" class="form-label">numero 2</label>
-        <input type="number" id="num2" class="form-control" formControlName="num2">
-      </div>
-       <div class="mb-3">
-       <button class="btn btn-primary" (click)="multiplicacion()">Multiplicar</button>
-      </div>
-      <h1>{{resultado}}</h1>
-    </form>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="max-w-lg mx-auto mt-10 p-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    >
+      <h1
+        class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center"
+      >
+        Multiplicar dos Números
+      </h1>
+
+      <form [formGroup]="formulario">
+        <div class="mb-5">
+          <label
+            for="num1"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Número 1</label
+          >
+          <input
+            type="number"
+            id="num1"
+            formControlName="num1"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="0"
+            required
+          />
+        </div>
+
+        <div class="mb-5">
+          <label
+            for="num2"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Número 2</label
+          >
+          <input
+            type="number"
+            id="num2"
+            formControlName="num2"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="0"
+            required
+          />
+        </div>
+
+        <button
+          type="button"
+          (click)="multiplicacion()"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Multiplicar
+        </button>
+
+        <h1
+          class="mt-6 text-2xl font-bold text-center text-gray-900 dark:text-white"
+        >
+          {{ resultado }}
+        </h1>
+      </form>
+    </div>
+  </body>
 </html>

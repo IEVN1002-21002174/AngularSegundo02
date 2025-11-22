@@ -18,19 +18,12 @@ export class zodiaco {
   calcularEdad(): void {
     const anioActual = 2025;
     const mesActual = 10;
-    const diaActual = 11;
+    const diaActual = 16;
 
-    if(this.year <= anioActual) {
-      this.calcula = anioActual - this.year;
-    }
-    else if (mesActual < this.mes && mesActual < 12) {
+    this.calcula = anioActual - this.year;
+
+    if (this.mes > mesActual || (this.mes === mesActual && this.dia > diaActual)) {
       this.calcula--;
-    }
-    else if (mesActual === this.mes && diaActual < this.dia && diaActual < 31) {
-      this.calcula--;
-    }
-    else{
-      this.calcula = 0;
     }
 
     this.edad = this.calcula;

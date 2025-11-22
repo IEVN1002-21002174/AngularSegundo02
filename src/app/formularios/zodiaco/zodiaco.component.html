@@ -1,50 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>zodiaco</h1>
-  <div class="d-flex container">
-    <form [formGroup]="formulario">
-      <div class="d-flex mb-3 col-7">
-        <div class="mb-3 me-3">
-          <label for="nom" class="form-label">Nombre</label>
-          <input type="text" id="nom" class="form-control" formControlName="nom">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="max-w-2xl mx-auto mt-10 p-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    >
+      <h1
+        class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+      >
+        Calcula tu Signo Zodiacal
+      </h1>
+
+      <form [formGroup]="formulario">
+        <!-- Fila para Nombre y Apellidos -->
+        <div class="grid md:grid-cols-3 md:gap-6 mb-5">
+          <div>
+            <label
+              for="nom"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Nombre</label
+            >
+            <input
+              type="text"
+              id="nom"
+              formControlName="nom"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="aPaterno"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Apellido Paterno</label
+            >
+            <input
+              type="text"
+              id="ap"
+              formControlName="ap"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="aMaterno"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Apellido Materno</label
+            >
+            <input
+              type="text"
+              id="aMaterno"
+              formControlName="am"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required
+            />
+          </div>
         </div>
-        <div class="mb-3 me-3">
-          <label for="aPaterno" class="form-label">Apaterno</label>
-          <input type="text" id="ap" class="form-control" formControlName="ap">
+
+        <!-- Fila para Fecha de Nacimiento -->
+        <div class="grid md:grid-cols-3 md:gap-6 mb-5">
+          <div>
+            <label
+              for="dia"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Día</label
+            >
+            <input
+              type="number"
+              id="dia"
+              formControlName="dia"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Ej: 25"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="mes"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Mes</label
+            >
+            <input
+              type="number"
+              id="mes"
+              formControlName="mes"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Ej: 12"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="year"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Año</label
+            >
+            <input
+              type="number"
+              id="year"
+              formControlName="year"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Ej: 1998"
+              required
+            />
+          </div>
         </div>
-        <div class="mb-3 me-3">
-          <label for="aMaterno" class="form-label">Amaterno</label>
-          <input type="text" id="aMaterno" class="form-control" formControlName="am">
-        </div>
+
+        <!-- Sección de Género -->
+        <fieldset class="mb-5">
+          <legend
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Género
+          </legend>
+          <div class="flex items-center gap-x-6">
+            <div class="flex items-center">
+              <input
+                id="genero-hombre"
+                type="radio"
+                name="genero"
+                value="Hombre"
+                formControlName="genero"
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                checked
+              />
+              <label
+                for="genero-hombre"
+                class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >
+                Hombre
+              </label>
+            </div>
+            <div class="flex items-center">
+              <input
+                id="genero-mujer"
+                type="radio"
+                name="genero"
+                value="Mujer"
+                formControlName="genero"
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="genero-mujer"
+                class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >
+                Mujer
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <button
+          type="button"
+          (click)="procesar()"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Ver Resultados
+        </button>
+      </form>
+
+      <!-- Sección de Resultados -->
+      <div
+        class="mt-8 text-center p-6 border-t border-gray-200 dark:border-gray-600"
+      >
+        <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+          Hola, {{ nombreCompleto }}
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Tienes: {{ edad }} años
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+          {{ signoZodiacal }}
+        </p>
+        <img
+          [src]="imagenSigno"
+          alt="Imagen del Signo Zodiacal"
+          class="mx-auto h-32 w-32 object-contain"
+        />
       </div>
-      <div class="d-flex mb-3 col-7">
-        <div class="mb-3 me-3">
-          <label for="dia" class="form-label">Dia</label>
-          <input type="text" id="dia" class="form-control" formControlName="dia">
-        </div>
-        <div class="mb-3 me-3">
-          <label for="mes" class="form-label">Mes</label>
-          <input type="text" id="mes" class="form-control" formControlName="mes">
-        </div>
-        <div class="mb-3 me-3">
-          <label for="year" class="form-label">año</label>
-          <input type="text" id="year" class="form-control" formControlName="year">
-        </div>
-      </div>
-      <div class="mb-3 col-7">
-        <button type="button" class="btn btn-primary w-100" (click)="procesar()">Ver</button>
-      </div>
-      <h1> Hola {{nombreCompleto}}</h1>
-      <h1>Tienes: {{edad}}</h1>
-      <h1>{{signoZodiacal}}</h1>
-      <img [src]="imagenSigno" alt="" style="max-width: 200px;">
-    </form>
-  </div>
-</body>
+    </div>
+  </body>
 </html>

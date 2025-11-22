@@ -17,8 +17,6 @@ export class ZodiacoComponent {
   signoZodiacal: string = '';
   imagenSigno: string = '';
 
-  constructor() { }
-
   ngOnInit(): void {
     this.formulario = new FormGroup({
       nom: new FormControl(''),
